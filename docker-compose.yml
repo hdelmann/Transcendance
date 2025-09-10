@@ -1,0 +1,74 @@
+services:
+  # DJANGO
+  django:
+    container_name: django
+    build:
+      context: ./django
+      args:
+        POSTGRESQL_USER: ${POSTGRESQL_USER}
+        POSTGRESQL_PASS: ${POSTGRESQL_PASS}
+        POSTGRESQL_DATABASE: ${POSTGRESQL_DATABASE}
+        POSTGRESQL_HOST: postgresql
+        OAUTH_UID: ${OAUTH_UID}
+        OAUTH_SECRET: ${OAUTH_SECRET}
+        OAUTH_CALLBACK: ${OAUTH_CALLBACK}
+        DJANGO_SECRET_KEY: ${DJANGO_SECRET_KEY}
+    volumes:
+      - asset-volume:/root/asset     # avatar des gens et autres
+      - static-volume:/var/www/pong  # fichiers static du site, frontend, .html, .css, .js
+    networks:
+      - 'online-pong'
+    depends_on:
+      - postgresql
+
+  # POSTGRESQL
+  postgresql:
+    container_name: postgresql
+    build:
+      context: ./postgresql
+      args:
+        POSTGRESQL_USER: ${POSTGRESQL_USER}
+        POSTGRESQL_PASS: ${POSTGRESQL_PASS}
+        POSTGRESQL_DATABASE: ${POSTGRESQL_DATABASE}
+    volumes:
+      - postgresql-volume:/var/lib/postgresql/data # base de donnee
+    networks:
+      - 'online-pong'
+
+  # APACHE2
+  apache2:
+    container_name: apache2
+    build:
+      context: ./apache2
+    volumes:
+      - static-volume:/var/www/pong # fichiers static du site, frontend, .html, .css, .js
+    ports:
+      - 443:443
+    networks:
+      - 'online-pong'
+    depends_on:
+      - django
+
+networks:
+  online-pong:
+    driver: bridge
+
+volumes:
+  postgresql-volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: bind
+      device: ${POSTGRESQL_DATA_MOUNT}
+  asset-volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: bind
+      device: ${ASSET_DATA_MOUNT}
+  static-volume:
+    driver: local
+    driver_opts:
+      o: bind
+      type: bind
+      device: ${STATIC_DATA_MOUNT}

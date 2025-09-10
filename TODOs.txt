@@ -1,0 +1,35 @@
+------------------------------------------
+toute reponse en json
+tous les endpoints <- auth ont besoin du token en header http bearer
+------------------------------------------
+
+auth:
+    /register <- POST (username, password, email)   -> success or error
+    /connect  <- POST (username || email, password) -> token or error
+
+
+friends:
+    /add      <- auth POST (username) -> success or error
+    /remove   <- auth POST (username) -> success or error
+
+
+api:
+    /{user}            <- GET (optionnal match_history) -> (avatar_path, match_history, userinfo) or error
+    /{user}/avatar     <- GET                           -> avatar or error
+    /{user}/set_avatar <- auth POST (avatar)            -> success or error
+
+
+game:
+    /create_party        <- auth POST (config)   -> game_uuid or error
+    /search_party        <- auth POST (config ?) -> game_uuid or error
+    /{game_uuid}/{token} <- WS                   -> ws or error
+
+
+notifs:
+    /{token} <- WS -> ws or success
+
+
+tournaments:
+    /create_tournament <- auth POST (config)         -> tournament_uuid or error
+    /status            <- auth GET (tournament_uuid) -> status or error (status peut etre wait ou join avec un game_uuid)
+    /join_tournament   <- auth POST ou GET ?         -> tournament_uuid or error

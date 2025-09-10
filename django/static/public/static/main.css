@@ -1,0 +1,23 @@
+:root{
+    --on-disconnect: collapse;
+    --on-connect: collapse;
+}
+
+.display-on-connect{
+    visibility: var(--on-connect);
+}
+
+.display-on-disconnect{
+    visibility: var(--on-disconnect);
+}
+
+.modal-content { background:    #431f82f8 !important; } 
+
+#background
+{
+background-color: #000000;
+opacity: 0.8;
+background-image:  linear-gradient(30deg, #ff0000 12%, transparent 12.5%, transparent 87%, #ff0000 87.5%, #ff0000), linear-gradient(150deg, #ff0000 12%, transparent 12.5%, transparent 87%, #ff0000 87.5%, #ff0000), linear-gradient(30deg, #ff0000 12%, transparent 12.5%, transparent 87%, #ff0000 87.5%, #ff0000), linear-gradient(150deg, #ff0000 12%, transparent 12.5%, transparent 87%, #ff0000 87.5%, #ff0000), linear-gradient(60deg, #ff000077 25%, transparent 25.5%, transparent 75%, #ff000077 75%, #ff000077), linear-gradient(60deg, #ff000077 25%, transparent 25.5%, transparent 75%, #ff000077 75%, #ff000077);
+background-size: 80px 140px;
+background-position: 0 0, 0 0, 40px 70px, 40px 70px, 0 0, 40px 70px;}
+

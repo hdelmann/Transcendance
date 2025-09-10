@@ -1,0 +1,277 @@
+@import url('https://fonts.googleapis.com/css?family=Amatic+SC');
+
+.bene-button {
+  border: none;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  text-transform: uppercase;
+  outline: none;
+  border-radius: 12px;
+  overflow: hidden;
+  position: relative;
+  color: #fff;
+  font-weight: 700;
+  font-size: 15px;
+  background-color: #222;
+  padding: 17px 60px;
+  margin: 0 auto;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.20);
+}
+
+.bene-button span {
+  position: relative; 
+  z-index: 1;
+}
+
+.bene-button:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 350px;
+  width: 400px;
+  background: gray;
+  -webkit-transition: all .5s ease-in-out;
+  transition: all .5s ease-in-out;
+  -webkit-transform: translateX(-98%) translateY(-25%) rotate(45deg);
+  transform: translateX(-98%) translateY(-25%) rotate(45deg);
+}
+
+.bene-button:hover:after {
+  -webkit-transform: translateX(-9%) translateY(-25%) rotate(45deg);
+  transform: translateX(-9%) translateY(-25%) rotate(45deg);
+}
+
+
+.modal-content { background: #212529a0 !important; } 
+
+
+#chat-box {
+  transform: translateY(0%);
+	transition: margin-right 2s;
+}
+
+#backgroundc {
+  body{
+    background: rgb(60,7,173);
+    background: -moz-linear-gradient(90deg, rgba(60,7,173,1) 0%, rgba(169,1,63,1) 6%, rgba(169,1,63,1) 94%, rgba(60,7,173,1) 100%);
+    background: -webkit-linear-gradient(90deg, rgba(60,7,173,1) 0%, rgba(169,1,63,1) 6%, rgba(169,1,63,1) 94%, rgba(60,7,173,1) 100%);
+    background: linear-gradient(90deg, rgba(60,7,173,1) 0%, rgba(169,1,63,1) 6%, rgba(169,1,63,1) 94%, rgba(60,7,173,1) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr="#3c07ad",endColorstr="#3c07ad",GradientType=1);
+}
+}
+
+.uparr {
+  background-color:  linear-gradient(90deg, rgba(60,7,173,1) 0%, rgba(169,1,63,1) 6%, rgba(169,1,63,1) 94%, rgba(60,7,173,1) 100%);
+}
+
+.bubble {
+  --r: 0.5em;  /* the radius */
+  --t: 0.5em; /* the size of the tail */
+  
+  max-width: 70%;
+  padding: 0.5em;
+  border-inline: var(--t) solid #0000;
+  border-radius: calc(var(--r) + var(--t))/var(--r);
+  mask: 
+    radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) 
+      var(--_p) 100%/var(--t) var(--t) no-repeat,
+    linear-gradient(#000 0 0) padding-box;
+  background: linear-gradient(135deg,#776b62,#2b3b44) border-box;
+  color: #fff;
+}
+
+.bubble-button {
+  --r: 1em;  /* the radius */
+  --t: 0em; /* the size of the tail */
+  
+  max-width: 70%;
+  padding: 0.5em;
+  border-inline: var(--t) solid #0000;
+  border-radius: calc(var(--r) + var(--t))/var(--r);
+  border: 0;
+  mask: 
+    radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) 
+      var(--_p) 100%/var(--t) var(--t) no-repeat,
+    linear-gradient(#000 0 0) padding-box;
+  background: linear-gradient(135deg,#776b62,#2b3b44) border-box;
+  color: #fff;
+}
+
+.left {
+  --_p: 0;
+  border-bottom-left-radius: 0 0;
+  place-self: start;
+}
+
+.agradient {
+  min-height:10%;
+  background: rgb(0,0,0);
+  background: linear-gradient(45deg, rgba(0,0,0,1) 0%, rgba(44,0,0,1) 10%, rgba(192,0,0,1) 25%, rgba(0,0,0,1) 50%, rgba(192,0,0,1) 75%, rgba(44,0,0,1) 91%, rgba(0,0,0,1) 100%)
+   0 0/200% 100%;
+   animation: a 10s linear infinite;
+}
+
+@keyframes a {
+  to {background-position: -200%, 0;}
+}
+
+.right {
+  --_p: 100%;
+  border-bottom-right-radius: 0 0;
+  place-self: end;
+}
+
+#waiting-modal.hidden {
+  position: fixed;
+  bottom: -100px;
+}
+
+#waiting-modal {
+  position: fixed;
+  bottom: 10px;
+}
+.bubble {
+  --r: 0.5em;  /* the radius */
+  --t: 0.5em; /* the size of the tail */
+  
+  max-width: 70%;
+  padding: 0.5em;
+  border-inline: var(--t) solid #0000;
+  border-radius: calc(var(--r) + var(--t))/var(--r);
+  mask: 
+    radial-gradient(100% 100% at var(--_p) 0,#0000 99%,#000 102%) 
+      var(--_p) 100%/var(--t) var(--t) no-repeat,
+    linear-gradient(#000 0 0) padding-box;
+  background: linear-gradient(135deg,#776b62,#2b3b44) border-box;
+  color: #fff;
+}
+
+.hide {
+  display: none;
+}
+
+.myDIV:hover + .hide {
+  display: block;
+  color: red;
+}
+
+.hide:hover {
+  display: block;
+  }
+
+
+  .brightness-on-hover:hover {
+    color: white;
+    font-style: italic;
+    font-weight:bold;
+  }
+
+  body{
+    background: rgb(33, 32, 34);
+}
+
+#notifications-container {
+  position: fixed;
+  width:    40em;
+  left:     calc(50vw - 20em);
+  bottom:   0px;
+  z-index: 5;
+}
+
+.notification-container {
+  width: 100%;
+  height: 3em;
+  margin: 0;
+  margin-bottom: 0.5em;
+  background-color: #000000BB;
+  position: relative;
+}
+
+.notification-icon {
+  position:  absolute;
+  top:      0.5em;
+  left:     0.5em;
+  width:    2em;
+  height:   2em;
+  fill:    white;
+}
+
+.notification-cancel {
+  position:  absolute;
+  top:      0.5em;
+  right:     0.5em;
+  width:    2em;
+  height:   2em;
+  fill:    red;
+  cursor: pointer;
+}
+
+.notification-accept-alone {
+  position:  absolute;
+  top:      0.5em;
+  right:     0.5em;
+  width:    2em;
+  height:   2em;
+  fill:    #00FF00;
+  cursor: pointer;
+}
+
+.notification-accept-with-cancel {
+  position:  absolute;
+  top:      0.5em;
+  right:     3em;
+  width:    2em;
+  height:   2em;
+  fill:    #00FF00;
+  cursor: pointer;
+}
+
+.notification-text {
+  position:   absolute;
+  font-size:  1em;
+  top:        0.85em;
+  left:       3.5em;
+  color:    white;
+}
+
+#game-component-set.hidden>* {
+  visibility: collapse;
+}
+
+table.tournament-ranking {
+  margin: 0;
+  border-spacing:0;
+  border-collapse: collapse;
+}
+
+table.tournament-ranking > thead > tr > th,
+table.tournament-ranking > tbody > tr > td {
+    width: 7em;
+    border: 0;
+    padding: 0;
+    text-align: center;
+}
+
+td.tournament-ranking-username {
+    font-size: 0.65em;
+}
+
+img.tournament-ranking-avatar {
+    width: 7em;
+    margin: 0;
+}
+
+.tournament-ranking-container {
+  padding: 1em;
+  background-color: #00000066;
+  display: block;
+  width: calc(7em * 4 + 2em);
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  color: white;
+  margin: auto;
+  margin-bottom: 5em;
+}
